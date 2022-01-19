@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import { FeedbackSection, Title } from './Section.styled';
 
 function Section({ title, children }) {
   return (
-    <section>
-      <h2>{title}</h2>
+    <FeedbackSection>
+      <Title>{title}</Title>
       {children}
-    </section>
+    </FeedbackSection>
   );
 }
 

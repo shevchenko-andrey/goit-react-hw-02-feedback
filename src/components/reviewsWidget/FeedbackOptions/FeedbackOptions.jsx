@@ -1,21 +1,25 @@
 import PropTypes from 'prop-types';
-
+import {
+  FeedbackList,
+  FeedbackItem,
+  FeedbackButton,
+} from './FeedbackOptions.styled';
 function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <ul>
+    <FeedbackList>
       {options.map(option => (
-        <li key={option}>
-          <button
+        <FeedbackItem key={option}>
+          <FeedbackButton
             type="button"
             onClick={onLeaveFeedback}
             name={option}
             key={option}
           >
             {option}
-          </button>
-        </li>
+          </FeedbackButton>
+        </FeedbackItem>
       ))}
-    </ul>
+    </FeedbackList>
   );
 }
 FeedbackOptions.propTypes = {

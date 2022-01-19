@@ -1,29 +1,36 @@
 import PropTypes from 'prop-types';
-
+import {
+  StatisticsList,
+  StatisticsItem,
+  Description,
+  StatisticData,
+} from './Statistic.styled';
 function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
-    <ul>
-      <li>
-        <span>good:</span>
-        <span>{good}</span>
-      </li>
-      <li>
-        <span>neutral:</span>
-        <span>{neutral}</span>
-      </li>
-      <li>
-        <span>bad:</span>
-        <span>{bad}</span>
-      </li>
-      <li>
-        <span>total:</span>
-        <span>{total}</span>
-      </li>
-      <li>
-        <span>Positive feedback:</span>
-        <span>{positivePercentage ? positivePercentage : 0}%</span>
-      </li>
-    </ul>
+    <StatisticsList>
+      <StatisticsItem>
+        <Description>Good:</Description>
+        <StatisticData>{good}</StatisticData>
+      </StatisticsItem>
+      <StatisticsItem>
+        <Description>Neutral:</Description>
+        <StatisticData>{neutral}</StatisticData>
+      </StatisticsItem>
+      <StatisticsItem>
+        <Description>Bad:</Description>
+        <StatisticData>{bad}</StatisticData>
+      </StatisticsItem>
+      <StatisticsItem>
+        <Description>Total:</Description>
+        <StatisticData>{total}</StatisticData>
+      </StatisticsItem>
+      <StatisticsItem>
+        <Description>Positive feedback:</Description>
+        <StatisticData>
+          {positivePercentage ? positivePercentage : 0}%
+        </StatisticData>
+      </StatisticsItem>
+    </StatisticsList>
   );
 }
 Statistics.propTypes = {
